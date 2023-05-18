@@ -125,7 +125,7 @@ const PostAddNew = () => {
   // HANDLE ADD POST
   const navigate = useNavigate();
   const handleAddPost = async (values) => {
-    if (!isValid || !image || !values.category || !values.content) {
+    if (!isValid || !image || !values.category || !content) {
       toast.error("Please fill full the option !", {
         theme: "colored",
         autoClose: 2000,
