@@ -1,0 +1,104 @@
+$primary: #6a5af9;
+$secondary: #d66efd;
+$colorPink: #f62682;
+$colorGreen: #20e3b2;
+$colorOrange: #ff6651;
+$colorGray: #eee;
+$colorBlue: #2cccff;
+$colorHover: rgba(0, 0, 0, 0.1);
+$colorHoverWhite: rgba(255, 255, 255, 0.5);
+/* ================================================= */
+@mixin heading-linear {
+  font-weight: bold;
+  background: linear-gradient(to right, $colorPink, $colorOrange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.post-content {
+  max-width: 1000px;
+  margin: 80px auto;
+}
+.entry-content,
+.entry-content .ql-snow .ql-editor {
+  font-family: "Roboto";
+  font-size: 16px;
+  h1::first-letter,
+  h2::first-letter,
+  h3::first-letter,
+  h4::first-letter {
+    text-transform: capitalize;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @include heading-linear();
+    font-weight: bold;
+    word-break: break-word;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    ::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  ul,
+  ol {
+    margin-bottom: 20px;
+    padding-left: 40px;
+    margin-left: 0;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  img {
+    margin: 0 auto 30px;
+    border-radius: 8px;
+  }
+  figure {
+    margin-bottom: 20px;
+  }
+  figure img {
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    color: #6b6b6b;
+  }
+  @media screen and (max-width: 1023.98px) {
+    font-size: 14px;
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+  }
+}

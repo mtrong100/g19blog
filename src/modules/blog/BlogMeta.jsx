@@ -1,0 +1,31 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+const BlogMeta = ({
+  date = "Unkown",
+  author = "Unkown",
+  className = "text-sm",
+  path = "",
+}) => {
+  return (
+    <div className={`${className} flex items-center gap-2 font-medium`}>
+      <span className="">{date}</span>
+      <span className="text-lg font-bold">.</span>
+      <Link to={`/profile/${path}`}>
+        <span className="font-semibold capitalize cursor-pointer hover:underline hover:text-colorPink">
+          {author}
+        </span>
+      </Link>
+    </div>
+  );
+};
+
+BlogMeta.propTypes = {
+  date: PropTypes.string,
+  author: PropTypes.string,
+  className: PropTypes.string,
+  path: PropTypes.string,
+};
+
+export default BlogMeta;
