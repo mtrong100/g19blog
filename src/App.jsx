@@ -10,7 +10,7 @@ import CategoryAddNew from "./modules/category/CategoryAddNew";
 import CategoryManage from "./modules/category/CategoryManage";
 import UserManage from "./modules/user/UserManage";
 import UserAddNew from "./modules/user/UserAddNew";
-import UserUpdate from "./modules/user/userUpdate";
+import UserUpdate from "./modules/user/UserUpdate";
 import CategoryUpdate from "./modules/category/CategoryUpdate";
 import PostUpdate from "./modules/post/PostUpdate";
 import PostDetailPage from "./pages/PostDetailPage";
