@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { footer } from "../../data/data";
-import logo from "../../assets/images/logo.png";
 import { BiUpArrowAlt } from "react-icons/bi";
 
 const Footer = () => {
@@ -15,8 +14,7 @@ const Footer = () => {
             className="flex items-center gap-3 uppercase select-none"
             to="/"
           >
-            <img src={logo} alt="logo" className="w-8" />
-            <span className="text-2xl font-semibold uppercase text-linear gradient-1">
+            <span className="text-3xl font-semibold uppercase text-linear gradient-1">
               G19BLOG
             </span>
           </NavLink>

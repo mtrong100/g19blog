@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/g19blog">
+    <BrowserRouter basename="/g19blog/">
       <App />
       <ToastContainer></ToastContainer>
     </BrowserRouter>

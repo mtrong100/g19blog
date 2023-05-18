@@ -28,7 +28,10 @@ const BlogItem = ({ data }) => {
           {data?.title}
         </BlogTitle>
         <div className="flex items-center justify-between mt-5">
-          <BlogCategory path={slugify(data?.category.slug)} className="text-xs">
+          <BlogCategory
+            path={slugify(data?.category?.slug)}
+            className="text-xs"
+          >
             {data?.category?.title}
           </BlogCategory>
           <BlogMeta

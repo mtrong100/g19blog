@@ -41,12 +41,12 @@ function App() {
             <Route path="/sign-in" element={<SigninPage />} />
             <Route path="/sign-up" element={<SignupPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/user" element={<UserPage />}></Route>
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/:slug" element={<PostDetailPage />}></Route>
             <Route path="/category/:slug" element={<CategoryPage />}></Route>
             <Route path="/profile/:slug" element={<UserProfilePage />}></Route>
-            <Route path="/user" element={<UserPage />}></Route>
 
             {/* ============ DASHBOARD =========== */}
             <Route element={<DashboardLayout />}>

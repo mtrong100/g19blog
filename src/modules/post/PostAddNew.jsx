@@ -125,7 +125,14 @@ const PostAddNew = () => {
   // HANDLE ADD POST
   const navigate = useNavigate();
   const handleAddPost = async (values) => {
-    if (!isValid) return;
+    if (!isValid || !image || !values.category || !values.content) {
+      toast.error("Please fill full the option !", {
+        theme: "colored",
+        autoClose: 2000,
+        pauseOnHover: false,
+      });
+      return;
+    }
     try {
       const cloneValues = { ...values };
       cloneValues.slug = slugify(values.slug || values.title, { lower: true });

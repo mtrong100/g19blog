@@ -32,7 +32,7 @@ const UserPage = () => {
     <Layout>
       <div className="page-container py-[150px]">
         <Heading>All users</Heading>
-        <div className="grid grid-cols-3 gap-5 mt-10">
+        <div className="grid grid-cols-4 gap-5 mt-10">
           {users.length > 0 &&
             users.map((item) => <UserCard key={v4()} data={item}></UserCard>)}
         </div>

@@ -4,7 +4,6 @@ import { useAuth } from "../../context/auth-context";
 
 const DashboardHeader = () => {
   const { userInfo } = useAuth();
-  console.log(userInfo);
 
   return (
     <header className="w-full py-5 bg-black shadow-md">

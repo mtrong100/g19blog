@@ -1,26 +1,28 @@
+import slugify from "slugify";
 import React, { useEffect } from "react";
+import Loading from "../components/loading/Loading";
 import Label from "../components/label/Label";
+import InputPasswordToggle from "../components/input/InputPasswordToggle";
 import Input from "../components/input/Input";
 import Field from "../components/field/Field";
-import { useForm } from "react-hook-form";
-import AuthPage from "./AuthPage";
 import Button from "../components/button/Button";
-import { Link, useNavigate } from "react-router-dom";
-import InputPasswordToggle from "../components/input/InputPasswordToggle";
+import AuthPage from "./AuthPage";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { userRole } from "../utils/constants";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../firebase-app/firebase-config";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import Loading from "../components/loading/Loading";
-import { userRole } from "../utils/constants";
-import slugify from "slugify";
-import userImg from "../assets/images/sample.png";
 
 // VALIDATE FORM
 const schema = yup.object({
-  username: yup.string().required("Please enter your username"),
+  username: yup
+    .string()
+    .max(20, "Username cannot exceed 20 characters")
+    .required("Please enter your username"),
   email: yup
     .string()
     .lowercase()
@@ -28,7 +30,7 @@ const schema = yup.object({
     .required("Please enter your email"),
   password: yup
     .string()
-    .min(8, "Your password must be 8 characters or greater")
+    .max(8, "Your password must be 8 characters")
     .required("Please enter your password"),
 });
 

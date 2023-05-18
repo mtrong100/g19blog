@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import Heading from "../../components/heading/Heading";
 import BlogItem from "./BlogItem";
 import { db } from "../../firebase-app/firebase-config";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import {
+  collection,
+  limit,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
 
 const BlogRelated = ({ categoryID }) => {
   const [postRelated, setPostRelated] = useState([]);
@@ -14,7 +20,8 @@ const BlogRelated = ({ categoryID }) => {
       if (!categoryID) return;
       const docRef = query(
         collection(db, "posts"),
-        where("category.id", "==", categoryID)
+        where("category.id", "==", categoryID),
+        limit(3)
       );
       onSnapshot(docRef, (snapshot) => {
         const results = [];
@@ -32,7 +39,7 @@ const BlogRelated = ({ categoryID }) => {
 
   if (!categoryID) return null;
   return (
-    <div className="pb-10">
+    <div className="pb-20">
       <Heading>similar blogs</Heading>
       <div className="grid grid-cols-3 gap-5 mt-10">
         {postRelated.length > 0 &&

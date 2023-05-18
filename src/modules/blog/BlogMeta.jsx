@@ -7,11 +7,12 @@ const BlogMeta = ({
   author = "Unkown",
   className = "text-sm",
   path = "",
+  show = false,
 }) => {
   return (
     <div className={`${className} flex items-center gap-2 font-medium`}>
-      <span className="">{date}</span>
-      <span className="text-lg font-bold">.</span>
+      <span>{date}</span>
+      {show && <span className={`text-lg font-bold`}>.</span>}
       <Link to={`/profile/${path}`}>
         <span className="font-semibold capitalize cursor-pointer hover:underline hover:text-colorPink">
           {author}

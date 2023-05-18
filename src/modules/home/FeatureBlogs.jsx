@@ -9,6 +9,7 @@ import {
   onSnapshot,
   limit,
 } from "firebase/firestore";
+import BlogItem from "../blog/BlogItem";
 
 const FeatureBlogs = () => {
   const [featurePosts, setFeaturePost] = useState([]);
@@ -38,11 +39,9 @@ const FeatureBlogs = () => {
     <section className="pt-20 pb-[120px]">
       <div className="page-container">
         <Heading>Feature blogs</Heading>
-        <div className="grid grid-cols-3 gap-5 mt-5">
+        <div className="grid grid-cols-3 gap-5 mt-10">
           {featurePosts.length > 0 &&
-            featurePosts.map((post) => (
-              <BlogFeatureItem key={post.id} data={post} />
-            ))}
+            featurePosts.map((post) => <BlogItem key={post.id} data={post} />)}
         </div>
       </div>
     </section>

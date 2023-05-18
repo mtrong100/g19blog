@@ -1,13 +1,9 @@
 import React from "react";
-import slugify from "slugify";
-import PropTypes from "prop-types";
 import NotFoundPage from "../../pages/NotFoundPage";
 import BlogImage from "../blog/BlogImage";
-import BlogTitle from "../blog/BlogTitle";
 import BlogMeta from "../blog/BlogMeta";
 
 const UserItem = ({ data }) => {
-  console.log(data);
   if (!data.id) return <NotFoundPage />;
 
   // FORMAT DATE
@@ -22,13 +18,13 @@ const UserItem = ({ data }) => {
         {data?.role}
       </span>
       <BlogImage
-        className="h-[250px] w-[250px] mt-12 rounded-full mb-2 group border-4 border-colorPink"
+        className="h-[150px] w-[150px] mt-12 rounded-full mb-2 group border-4 border-colorPink"
         url={data?.avatar}
         alt="blog-img"
       />
       <div className="flex flex-col items-center justify-center gap-3">
         <BlogMeta
-          className="text-xl"
+          className="flex-col text-base"
           path={data?.slug}
           date={formatDate}
           author={data?.username}
@@ -36,27 +32,6 @@ const UserItem = ({ data }) => {
       </div>
     </div>
   );
-};
-
-// ADDING PropTypes
-UserItem.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    createdAt: PropTypes.shape({
-      seconds: PropTypes.number,
-    }),
-    image: PropTypes.string,
-    slug: PropTypes.string,
-    title: PropTypes.string,
-    category: PropTypes.shape({
-      slug: PropTypes.string,
-      title: PropTypes.string,
-    }),
-    user: PropTypes.shape({
-      slug: PropTypes.string,
-      username: PropTypes.string,
-    }),
-  }).isRequired,
 };
 
 export default UserItem;
