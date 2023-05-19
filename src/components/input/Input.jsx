@@ -11,7 +11,7 @@ const Input = ({ name = "", type = "text", children, control, ...props }) => {
   return (
     <div className="relative w-full">
       <input
-        className="w-full p-5 font-medium transition-all border-2 border-slate-600 border-solid rounded-lg input focus:bg-[#282A3A] focus:border-colorPurple"
+        className="w-full p-5 md:text-base text-sm font-medium transition-all border-2 border-slate-600 border-solid rounded-lg input focus:bg-[#282A3A] focus:border-colorPurple"
         type={type}
         id={name}
         {...field}

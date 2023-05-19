@@ -41,7 +41,7 @@ const BlogRelated = ({ categoryID }) => {
   return (
     <div className="pb-20">
       <Heading>similar blogs</Heading>
-      <div className="grid grid-cols-3 gap-5 mt-10">
+      <div className="grid gap-5 mt-10 md:grid-cols-3">
         {postRelated.length > 0 &&
           postRelated.map((item) => (
             <BlogItem key={item.id} data={item}></BlogItem>

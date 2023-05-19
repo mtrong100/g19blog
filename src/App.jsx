@@ -1,22 +1,25 @@
-import "swiper/css";
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/auth-context";
-import DashboardPage from "./pages/DashboardPage";
-import DashboardLayout from "./modules/dashboard/DashboardLayout";
-import PostManage from "./modules/post/PostManage";
-import PostAddNew from "./modules/post/PostAddNew";
-import CategoryAddNew from "./modules/category/CategoryAddNew";
-import CategoryManage from "./modules/category/CategoryManage";
-import UserManage from "./modules/user/UserManage";
-import UserAddNew from "./modules/user/UserAddNew";
-import UserUpdate from "./modules/user/UserUpdate";
-import CategoryUpdate from "./modules/category/CategoryUpdate";
-import PostUpdate from "./modules/post/PostUpdate";
-import PostDetailPage from "./pages/PostDetailPage";
-import CategoryPage from "./pages/CategoryPage";
-import UserProfilePage from "./pages/UserProfilePage";
-import UserPage from "./pages/UserPage";
+
+/* ===================================================== */
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const DashboardLayout = lazy(() =>
+  import("./modules/dashboard/DashboardLayout")
+);
+const PostManage = lazy(() => import("./modules/post/PostManage"));
+const PostAddNew = lazy(() => import("./modules/post/PostAddNew"));
+const CategoryAddNew = lazy(() => import("./modules/category/CategoryAddNew"));
+const CategoryManage = lazy(() => import("./modules/category/CategoryManage"));
+const UserManage = lazy(() => import("./modules/user/UserManage"));
+const UserAddNew = lazy(() => import("./modules/user/UserAddNew"));
+const UserUpdate = lazy(() => import("./modules/user/UserUpdate"));
+const CategoryUpdate = lazy(() => import("./modules/category/CategoryUpdate"));
+const PostUpdate = lazy(() => import("./modules/post/PostUpdate"));
+const PostDetailPage = lazy(() => import("./pages/PostDetailPage"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const UserProfilePage = lazy(() => import("./pages/UserProfilePage"));
+const UserPage = lazy(() => import("./pages/UserPage"));
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import special from "../assets/images/special.jpg";
 import Layout from "../components/layout/Layout";
 
 const ContactPage = () => {
+  // FIX SCROLL BUG
+  useEffect(() => {
+    document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
     <Layout>
       <div className="contactBg h-[50vh] lg:h-[80vh] flex items-center justify-center">

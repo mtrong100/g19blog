@@ -45,18 +45,20 @@ const PostDetailPage = () => {
   return (
     <Layout>
       <div className="page-container pt-[150px]">
-        <div className="grid grid-cols-2 gap-5 mb-10">
+        <div className="grid gap-5 mb-10 lg:grid-cols-2">
           <BlogImage url={postDetail?.image} className="rounded-md"></BlogImage>
           <div className="p-5 rounded-lg border-gradient post-info bg-colorDime">
             <div className="flex items-center gap-5 mb-5">
-              <BlogCategory className="px-6 py-2 text-xl">
+              <BlogCategory className="px-6 py-2 md:text-xl">
                 {category?.title}
               </BlogCategory>
-              <span className="text-xl font-semibold">{formatDate}</span>
+              <span className="font-semibold md:text-xl">{formatDate}</span>
             </div>
-            <BlogTitle className="mb-5 text-4xl">{postDetail.title}</BlogTitle>
+            <BlogTitle className="mb-5 text-xl md:text-4xl">
+              {postDetail.title}
+            </BlogTitle>
             <div className="flex items-center gap-5">
-              <div className="w-[150px] h-[150px] border-colorPink border-2 rounded-full">
+              <div className="w-[80px] h-[80px] md:w-[150px] md:h-[150px] border-colorPink border-2 rounded-full">
                 <img
                   className="rounded-full imgCover "
                   style={{ imageRendering: "pixelated" }}
@@ -64,7 +66,7 @@ const PostDetailPage = () => {
                   alt=""
                 />
               </div>
-              <h1 className="text-4xl font-bold select-none hover:opacity-80 text-linear">
+              <h1 className="text-2xl font-bold select-none md:text-4xl hover:opacity-80 text-linear">
                 {user?.username}
               </h1>
             </div>

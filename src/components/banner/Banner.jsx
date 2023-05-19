@@ -9,8 +9,10 @@ const Banner = () => {
           <span className="text-lg font-semibold text-colorPink">
             Stay Informed, Get Inspired
           </span>
-          <h1 className="my-3 font-bold text-7xl text-linear">G19BLOG</h1>
-          <p className="leading-snug break-all">
+          <h1 className="my-3 text-5xl font-bold md:text-7xl text-linear">
+            G19BLOG
+          </h1>
+          <p className="text-sm leading-snug break-all md:text-base">
             From informative articles to in-depth analysis, we've got you
             covered. Join our community of avid readers and stay up-to-date with
             the latest trends and insights. Whether you're a seasoned pro or
@@ -22,7 +24,7 @@ const Banner = () => {
             path="/sign-in"
             type="button"
             kind="secondary"
-            className="w-[120px] md:w-[150px] h-[55px] mt-8"
+            className="w-[120px] md:w-[150px] h-[44px] md:h-[55px] mt-8"
           >
             Sign in
           </Button>

@@ -101,4 +101,14 @@ $colorHoverWhite: rgba(255, 255, 255, 0.5);
       font-size: 20px;
     }
   }
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 30px;
+    }
+    h2,
+    h3,
+    h4 {
+      font-size: 26px;
+    }
+  }
 }

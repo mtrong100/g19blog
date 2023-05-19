@@ -66,7 +66,7 @@ const UserProfilePage = () => {
       <div className="page-container py-[150px]">
         <div className="flex items-center gap-5">
           <img
-            className="w-[250px] object-cover h-[250px] rounded border-2 border-gradient"
+            className="w-[130px] h-[130px] md:w-[250px] object-cover md:h-[250px] rounded border-2 border-gradient"
             src={user?.avatar}
             alt="user-avatar"
           />
@@ -76,10 +76,10 @@ const UserProfilePage = () => {
               {user?.email}
             </span>
             <div className="flex items-center gap-5">
-              <span className="hover:opacity-90 capitalize w-fit select-none inline-block px-[15px] text-center rounded-lg font-semibold bg-colorGradient text-white py-[10px]">
+              <span className="hover:opacity-90 capitalize w-fit select-none inline-block px-[15px] text-center rounded-lg font-semibold bg-colorGradient text-white py-[10px] md:text-base text-sm">
                 {user?.role}
               </span>
-              <span className="text-lg font-semibold text-white select-none hover:opacity-90">
+              <span className="text-sm font-semibold text-white select-none md:text-lg hover:opacity-90">
                 {`Date: ${formatDate}`}
               </span>
             </div>
@@ -87,7 +87,7 @@ const UserProfilePage = () => {
         </div>
         <div className="mt-20">
           <Heading>blogs post</Heading>
-          <div className="grid grid-cols-3 gap-5 mt-10">
+          <div className="grid gap-5 mt-10 md:grid-cols-3">
             {posts.length > 0 &&
               posts.map((item) => {
                 return <BlogItem key={v4()} data={item}></BlogItem>;

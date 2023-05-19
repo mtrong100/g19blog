@@ -43,7 +43,7 @@ const Footer = () => {
                     return (
                       <li key={index}>
                         <a
-                          className="text-lg font-medium hover:text-colorPink"
+                          className="text-sm font-medium md:text-lg hover:text-colorPink"
                           href="#"
                         >
                           {item}

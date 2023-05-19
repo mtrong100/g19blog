@@ -133,7 +133,7 @@ const SignupPage = () => {
             <Button
               type="submit"
               kind="secondary"
-              className={`w-full h-[60px] font-semibold text-xl ${
+              className={`w-full h-[53px] md:h-[60px] font-semibold md:text-xl ${
                 isSubmitting ? "opacity-50 pointer-events-none" : ""
               }`}
             >

@@ -77,7 +77,7 @@ const DashboardPage = () => {
         <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {posts.length > 0 &&
             posts.map((item) => {
-              return <BlogItem blockHeight key={v4()} data={item}></BlogItem>;
+              return <BlogItem key={v4()} data={item}></BlogItem>;
             })}
         </div>
       </div>
