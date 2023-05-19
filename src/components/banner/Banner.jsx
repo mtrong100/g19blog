@@ -22,7 +22,7 @@ const Banner = () => {
             path="/sign-in"
             type="button"
             kind="secondary"
-            className="w-[150px] h-[55px] mt-8"
+            className="w-[120px] md:w-[150px] h-[55px] mt-8"
           >
             Sign in
           </Button>

@@ -31,6 +31,17 @@ const PostManage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
 
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      navigate("/");
+      toast.error("Not available for mobile and tablet  !", {
+        theme: "colored",
+        autoClose: 2000,
+        pauseOnHover: false,
+      });
+    }
+  }, [navigate]);
+
   // RENDER POST STATUS
   const renderStatus = (status) => {
     switch (status) {

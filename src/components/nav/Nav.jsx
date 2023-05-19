@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <ul className="flex items-center gap-8">
+    <ul className="items-center hidden gap-8 lg:flex">
       {nav.map((item) => (
         <li key={v4()}>
           <NavLink className="links" to={item.path}>

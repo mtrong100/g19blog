@@ -7,7 +7,9 @@ const AuthContext = createContext();
 
 function AuthProvider(props) {
   const [userInfo, setUserInfo] = useState({});
-  const value = { userInfo, setUserInfo };
+  const [open, setOpen] = useState(false);
+
+  const value = { userInfo, setUserInfo, open, setOpen };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

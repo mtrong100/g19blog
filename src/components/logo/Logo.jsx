@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -13,5 +13,4 @@ const Logo = ({ className = "" }) => {
 Logo.propTypes = {
   className: PropTypes.string,
 };
-
 export default Logo;

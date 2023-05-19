@@ -27,11 +27,16 @@ const BlogPage = () => {
     getPostData();
   }, []);
 
+  // FIX SCROLL BUG
+  useEffect(() => {
+    document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
     <Layout>
       <div className="page-container py-[150px]">
         <Heading>All posts collection</Heading>
-        <div className="grid grid-cols-3 gap-5 mt-10">
+        <div className="grid gap-5 mt-10 md:grid-cols-3">
           {posts.length > 0 &&
             posts.map((item) => {
               return <BlogItem key={v4()} data={item}></BlogItem>;

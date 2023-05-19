@@ -30,6 +30,17 @@ const CategoryManage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
 
+  useEffect(() => {
+    if (window.innerWidth <= 480) {
+      navigate("/");
+      toast.error("Not available for mobile and tablet  !", {
+        theme: "colored",
+        autoClose: 2000,
+        pauseOnHover: false,
+      });
+    }
+  }, [navigate]);
+
   // RENDER POST STATUS
   const renderStatus = (status) => {
     switch (status) {
@@ -103,6 +114,7 @@ const CategoryManage = () => {
     }
   };
 
+  // HANDLE UPDATE CATEGORY
   const handleUpdate = (categoryID) => {
     if (userInfo.role === userRole.ADMIN) {
       navigate(`/manage/update-category?id=${categoryID}`);
@@ -118,7 +130,7 @@ const CategoryManage = () => {
   return (
     <>
       <Heading>categories manage</Heading>
-      <div className="flex justify-between py-10">
+      <div className="flex flex-col justify-between gap-10 py-10 lg:gap-0 lg:flex-row">
         <Button
           type="button"
           kind="secondary"
@@ -169,7 +181,7 @@ const CategoryManage = () => {
               return (
                 <tr key={item.id}>
                   <td>
-                    <span className="font-semibold text-gray-500 capitalize">
+                    <span className="text-xs font-semibold text-gray-500 capitalize lg:text-base ">
                       {item.id}
                     </span>
                   </td>

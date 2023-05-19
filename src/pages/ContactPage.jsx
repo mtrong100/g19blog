@@ -5,18 +5,18 @@ import Layout from "../components/layout/Layout";
 const ContactPage = () => {
   return (
     <Layout>
-      <div className="contactBg h-[80vh] flex items-center justify-center">
+      <div className="contactBg h-[50vh] lg:h-[80vh] flex items-center justify-center">
         <h1 className="text-5xl font-bold text-center md:text-8xl text-colorPink">
           Contact us
         </h1>
       </div>
 
       {/* content */}
-      <div className="my-20 page-container md:my-32">
+      <div className="my-10 page-container md:my-32">
         {/* booking section */}
         <div className="grid gap-5 mt-10 md:grid-cols-2">
           <div className="flex flex-col gap-5">
-            <h2 className="text-4xl font-bold uppercase text-linear">
+            <h2 className="text-3xl font-bold uppercase md:text-2xl lg:text-4xl text-linear">
               Subscribe us now
             </h2>
             <input
@@ -35,7 +35,7 @@ const ContactPage = () => {
             ></textarea>
           </div>
 
-          <div className="relative overflow-hidden group w-[600px] h-[600px] border-gradient">
+          <div className="relative overflow-hidden group border-gradient">
             <img
               src={special}
               alt="dogimg"

@@ -17,7 +17,7 @@ const BlogNewestItem = ({ data }) => {
 
   return (
     <div
-      className={`flex items-center gap-5 mb-7 pb-7 border-b border-b-colorPurple last:border-b-0 last:pb-0 last:mb-0`}
+      className={`flex flex-col md:flex-row items-center gap-5 mb-7 pb-7 border-b border-b-colorPurple last:border-b-0 last:pb-0 last:mb-0`}
     >
       <BlogImage
         className="flex-1 w-full h-[170px] rounded-xl group"

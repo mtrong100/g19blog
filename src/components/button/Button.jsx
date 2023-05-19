@@ -23,7 +23,7 @@ const Button = ({
           type={type}
           onClick={onClick}
           {...props}
-          className={`flex ${className} btn-shinny-1 text-lg capitalize items-center justify-center px-5 rounded-md h-[50px] font-medium cursor-pointer ${backgroundBtn}`}
+          className={`flex ${className} btn-shinny-1 text-sm md:text-lg capitalize items-center justify-center px-5 rounded-md h-[50px] font-medium cursor-pointer ${backgroundBtn}`}
         >
           {children}
         </button>

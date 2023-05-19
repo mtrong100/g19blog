@@ -51,7 +51,7 @@ const UserProfilePage = () => {
   // FIX SCROLL BUG
   useEffect(() => {
     document.body.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [slug]);
+  }, []);
 
   // FORMAT DATE
   const date = user?.createdAt?.seconds

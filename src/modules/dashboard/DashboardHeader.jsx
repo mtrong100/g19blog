@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../components/button/Button";
 import { useAuth } from "../../context/auth-context";
-
+import { HiMenuAlt2 } from "react-icons/hi";
 const DashboardHeader = () => {
-  const { userInfo } = useAuth();
+  const { userInfo, setOpen, open } = useAuth();
 
   return (
     <header className="w-full py-5 bg-black shadow-md">
       <div className="flex items-center justify-between page-container">
-        <Button type="button" kind="secondary" path="/">
-          return home
-        </Button>
         <div className="flex items-center gap-5">
-          <span className="text-lg font-semibold capitalize">
+          <span onClick={() => setOpen(!open)} className="text-4xl lg:hidden">
+            <HiMenuAlt2 />
+          </span>
+          <Button
+            className="hidden md:flex"
+            type="button"
+            kind="secondary"
+            path="/"
+          >
+            return home
+          </Button>
+        </div>
+        <div className="flex items-center gap-5">
+          <span className="text-sm font-semibold capitalize md:text-lg">
             {userInfo?.username}
           </span>
           <div className="w-[50px] h-[50px] rounded-full">

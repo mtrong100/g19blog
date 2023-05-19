@@ -40,7 +40,7 @@ const DashboardPage = () => {
       <Heading>personal dashboard</Heading>
       {/* USER-INFO */}
       <div className="mt-10">
-        <div className="flex items-center gap-5 px-8 py-5 rounded-md bg-colorDime">
+        <div className="flex flex-col items-center gap-5 px-8 py-5 rounded-md md:flex-row bg-colorDime">
           <img
             className="w-[250px] object-cover h-[250px] rounded-full border-2 border-colorPink"
             src={userInfo?.avatar}
@@ -74,10 +74,10 @@ const DashboardPage = () => {
       {/* USER-BLOGS */}
       <div className="mt-16">
         <Heading>your blogs</Heading>
-        <div className="grid grid-cols-3 gap-5 mt-10">
+        <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {posts.length > 0 &&
             posts.map((item) => {
-              return <BlogItem key={v4()} data={item}></BlogItem>;
+              return <BlogItem blockHeight key={v4()} data={item}></BlogItem>;
             })}
         </div>
       </div>

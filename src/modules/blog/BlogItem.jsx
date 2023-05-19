@@ -7,7 +7,7 @@ import slugify from "slugify";
 import NotFoundPage from "../../pages/NotFoundPage";
 import PropTypes from "prop-types";
 
-const BlogItem = ({ data }) => {
+const BlogItem = ({ data, blockHeight = false }) => {
   if (!data.id) return <NotFoundPage />;
 
   // FORMAT DATE
@@ -19,28 +19,30 @@ const BlogItem = ({ data }) => {
   return (
     <div className="flex flex-col h-full border shadow-lg border-gradient bg-colorDime">
       <BlogImage
-        className="h-[250px] mb-2 group"
+        className={`${
+          blockHeight
+            ? "md:h-[250px] lg:h-[350px]"
+            : "md:h-[150px] lg:h-[250px]"
+        }  mb-2 group`}
         url={data?.image}
         alt="blog-img"
       />
-      <div className="flex flex-col flex-1 h-full p-3">
-        <BlogTitle path={slugify(data?.slug)} className="flex-1 text-lg">
+      <div className="flex flex-col flex-1 h-full gap-4 p-3">
+        <BlogCategory path={slugify(data?.category?.slug)} className="text-xs">
+          {data?.category?.title}
+        </BlogCategory>
+        <BlogTitle
+          path={slugify(data?.slug)}
+          className="flex-1 md:text-sm lg:text-xl"
+        >
           {data?.title}
         </BlogTitle>
-        <div className="flex items-center justify-between mt-5">
-          <BlogCategory
-            path={slugify(data?.category?.slug)}
-            className="text-xs"
-          >
-            {data?.category?.title}
-          </BlogCategory>
-          <BlogMeta
-            className="text-xs"
-            path={data?.user?.slug}
-            date={formatDate}
-            author={data?.user?.username}
-          />
-        </div>
+        <BlogMeta
+          className="text-sm lg:text-base"
+          path={data?.user?.slug}
+          date={formatDate}
+          author={data?.user?.username}
+        />
       </div>
     </div>
   );

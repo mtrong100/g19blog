@@ -65,7 +65,7 @@ const Footer = () => {
 
       {/* scroll to top */}
       <a href="#">
-        <div className="fixed w-[50px] h-[50px] rounded-full bottom-5 right-5 flex items-center justify-center bg-colorGradient text-white z-40 cursor-pointer font-bold text-2xl">
+        <div className="fixed shadow-2xl w-[50px] h-[50px] rounded-full bottom-5 right-5 flex items-center justify-center bg-colorGradient text-white z-40 cursor-pointer font-bold text-2xl">
           <BiUpArrowAlt></BiUpArrowAlt>
         </div>
       </a>

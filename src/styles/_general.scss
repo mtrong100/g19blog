@@ -168,6 +168,10 @@ $secondary: #f91880;
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   grid-gap: 40px;
+  @media screen and (max-width: 769px) {
+    grid-template-columns: none;
+    grid-gap: 20px;
+  }
 }
 
 .sidebar-item:hover {
@@ -188,6 +192,7 @@ $secondary: #f91880;
 
 .table-layout {
   margin-top: 20px;
+  margin-bottom: 50px;
   overflow-x: auto;
   border-radius: 10px;
   table {

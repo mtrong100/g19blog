@@ -16,7 +16,7 @@ const BlogNewestLarge = ({ data }) => {
   return (
     <div className="bg-colorDime border border-r-[8px] rounded border-colorPink">
       <BlogImage
-        className="h-[430px] group rounded"
+        className="h-[250px] md:h-[430px] group rounded"
         url={data?.image}
         alt="blog-img"
       />
@@ -31,7 +31,7 @@ const BlogNewestLarge = ({ data }) => {
             author={data?.user?.username}
           />
         </div>
-        <BlogTitle path={slugify(data?.slug)} className="text-3xl">
+        <BlogTitle path={slugify(data?.slug)} className="text-xl md:text-3xl">
           {data?.title}
         </BlogTitle>
       </div>

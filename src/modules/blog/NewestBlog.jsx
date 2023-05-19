@@ -41,7 +41,7 @@ const NewestBlog = () => {
     <section className="mb-20">
       <div className="page-container">
         <Heading>Newest blogs</Heading>
-        <div className="grid grid-cols-2 gap-10 mt-16 ">
+        <div className="grid gap-10 mt-16 lg:grid-cols-2 ">
           <BlogNewestLarge data={first}></BlogNewestLarge>
           <div className="p-5 border border-r-[8px] shadow-xl  border-colorPurple bg-colorDime rounded-xl">
             {other.length > 0 &&

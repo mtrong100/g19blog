@@ -91,7 +91,7 @@ const CategoryAddNew = () => {
     <div>
       <Heading>add new category</Heading>
       <form className="pt-14" onSubmit={handleSubmit(handleAddCategory)}>
-        <div className="grid grid-cols-2 gap-10 mb-10">
+        <div className="grid gap-10 mb-10 lg:grid-cols-2">
           {/* ==================== Title ============================ */}
           <Field>
             <Label>Title ✒️</Label>
