@@ -1,0 +1,1 @@
+import{j as s,L as o}from"./index-8e675e0c.js";import{P as e}from"./Button-5fc3483b.js";const r=({className:t=""})=>s.jsxs(o,{className:`text-2xl md:text-3xl font-semibold ${t}`,to:"/",children:[s.jsx("span",{className:"font-bold text-linear",children:"G19"}),"BLOG"]});r.propTypes={className:e.string};export{r as L};
