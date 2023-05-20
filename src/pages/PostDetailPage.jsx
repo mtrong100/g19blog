@@ -46,7 +46,10 @@ const PostDetailPage = () => {
     <Layout>
       <div className="page-container pt-[150px]">
         <div className="grid gap-5 mb-10 lg:grid-cols-2">
-          <BlogImage url={postDetail?.image} className="rounded-md"></BlogImage>
+          <BlogImage
+            url={postDetail?.image}
+            className="rounded-md h-[250px] md:h-[360px] group"
+          ></BlogImage>
           <div className="p-5 rounded-lg border-gradient post-info bg-colorDime">
             <div className="flex items-center gap-5 mb-5">
               <BlogCategory className="px-6 py-2 md:text-xl">

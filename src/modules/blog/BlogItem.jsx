@@ -20,9 +20,7 @@ const BlogItem = ({ data, blockHeight = false }) => {
     <div className="flex flex-col h-full border shadow-lg border-gradient bg-colorDime">
       <BlogImage
         className={`${
-          blockHeight
-            ? "md:h-[250px] lg:h-[350px]"
-            : "md:h-[150px] lg:h-[250px]"
+          blockHeight ? "h-[250px] lg:h-[350px]" : "h-[200px] lg:h-[250px]"
         }  mb-2 group`}
         url={data?.image}
         alt="blog-img"
