@@ -52,7 +52,7 @@ const PostDetailPage = () => {
           ></BlogImage>
           <div className="p-5 rounded-lg border-gradient post-info bg-colorDime">
             <div className="flex items-center gap-5 mb-5">
-              <BlogCategory className="px-6 py-2 md:text-xl">
+              <BlogCategory className="px-6 py-2 ">
                 {category?.title}
               </BlogCategory>
               <span className="font-semibold md:text-xl">{formatDate}</span>

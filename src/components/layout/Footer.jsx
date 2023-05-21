@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         {/* footer-Copyright */}
-        <p className="mt-20 text-base font-semibold text-center gradient-3">
+        <p className="pt-10 text-sm font-semibold text-center gradient-3">
           @Copyright by KID-NAME-FINGER 2023
         </p>
       </div>

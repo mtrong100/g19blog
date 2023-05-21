@@ -36,7 +36,7 @@ const BlogItem = ({ data, blockHeight = false }) => {
           {data?.title}
         </BlogTitle>
         <BlogMeta
-          className="text-sm lg:text-base"
+          className="text-xs lg:text-sm"
           path={data?.user?.slug}
           date={formatDate}
           author={data?.user?.username}
