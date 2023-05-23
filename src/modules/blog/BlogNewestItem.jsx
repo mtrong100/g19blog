@@ -17,7 +17,7 @@ const BlogNewestItem = ({ data }) => {
 
   return (
     <div
-      className={`flex flex-col md:flex-row items-center gap-5 mb-7 pb-7 border-b border-b-colorPurple last:border-b-0 last:pb-0 last:mb-0`}
+      className={`flex flex-col md:flex-row gap-5 mb-7 pb-7 border-b border-b-colorPurple last:border-b-0 last:pb-0 last:mb-0`}
     >
       <BlogImage
         className="flex-1 w-full h-[170px] rounded-xl group"
@@ -25,13 +25,18 @@ const BlogNewestItem = ({ data }) => {
         alt="blog-img"
       />
       <div className="flex flex-col flex-1 gap-3">
-        <BlogCategory path={slugify(data?.category.slug)} className="w-fit">
+        <BlogCategory className="text-xs" path={slugify(data?.category.slug)}>
           {category?.title}
         </BlogCategory>
         <BlogTitle path={slugify(data?.slug)} className="text-lg">
           {data?.title}
         </BlogTitle>
-        <BlogMeta path={user?.slug} date={formatDate} author={user?.username} />
+        <BlogMeta
+          className="text-xs"
+          path={user?.slug}
+          date={formatDate}
+          author={user?.username}
+        />
       </div>
     </div>
   );

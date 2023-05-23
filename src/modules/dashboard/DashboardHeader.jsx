@@ -6,14 +6,14 @@ const DashboardHeader = () => {
   const { userInfo, setOpen, open } = useAuth();
 
   return (
-    <header className="w-full py-5 bg-black shadow-md">
+    <header className="w-full py-2 shadow-md md:py-5 bg-colorDarkRedux">
       <div className="flex items-center justify-between page-container">
         <div className="flex items-center gap-5">
           <span onClick={() => setOpen(!open)} className="text-4xl lg:hidden">
             <HiMenuAlt2 />
           </span>
           <Button
-            className="hidden md:flex"
+            className="hidden py-3 md:flex"
             type="button"
             kind="secondary"
             path="/"

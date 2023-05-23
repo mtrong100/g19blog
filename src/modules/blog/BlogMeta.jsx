@@ -14,7 +14,7 @@ const BlogMeta = ({
       <span>{date}</span>
       {show && <span className={`text-lg font-bold`}>.</span>}
       <Link to={`/profile/${path}`}>
-        <span className="font-semibold capitalize cursor-pointer hover:underline hover:text-colorPink">
+        <span className="font-semibold capitalize cursor-pointer hover:underline hover:text-colorPrimary">
           {author}
         </span>
       </Link>

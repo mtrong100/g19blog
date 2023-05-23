@@ -4,6 +4,7 @@ import Banner from "../components/banner/Banner";
 import FeatureBlogs from "../modules/home/FeatureBlogs";
 import NewestBlog from "../modules/blog/NewestBlog";
 import BlogTrending from "../modules/blog/BlogTrending";
+import BlogOthers from "../modules/blog/BlogOthers";
 
 const HomePage = () => {
   // FIX SCROLL BUG
@@ -18,6 +19,7 @@ const HomePage = () => {
         <FeatureBlogs />
         <NewestBlog />
         <BlogTrending />
+        <BlogOthers />
       </Layout>
     </>
   );

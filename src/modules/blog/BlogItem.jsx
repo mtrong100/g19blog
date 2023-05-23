@@ -17,11 +17,11 @@ const BlogItem = ({ data, blockHeight = false }) => {
   const formatDate = new Date(date).toLocaleDateString("vi-VI");
 
   return (
-    <div className="flex flex-col h-full border shadow-lg border-gradient bg-colorDime">
+    <div className="flex flex-col h-full p-3 transition-all border border-transparent rounded-lg shadow-lg hover:border-colorPrimary bg-colorDarkRedux">
       <BlogImage
         className={`${
           blockHeight ? "h-[250px] lg:h-[350px]" : "h-[200px] lg:h-[250px]"
-        }  mb-2 group`}
+        }  mb-2 group rounded-md`}
         url={data?.image}
         alt="blog-img"
       />

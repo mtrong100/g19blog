@@ -14,24 +14,25 @@ const BlogNewestLarge = ({ data }) => {
   const formatDate = new Date(date).toLocaleDateString("vi-VI");
 
   return (
-    <div className="bg-colorDime border border-r-[8px] rounded border-colorPink">
+    <div className="p-3 transition-all border border-transparent rounded-lg shadow-lg hover:border-colorPrimary bg-colorDarkRedux">
       <BlogImage
         className="h-[250px] md:h-[430px] group rounded"
         url={data?.image}
         alt="blog-img"
       />
-      <div className="px-5 py-8 rounded-br-xl rounded-bl-xl">
-        <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-5 pt-5">
+        <div className="flex items-center justify-between">
           <BlogCategory path={slugify(data?.category.slug)}>
             {data?.category?.title}
           </BlogCategory>
           <BlogMeta
+            className="md:text-lg"
             path={data?.user?.slug}
             date={formatDate}
             author={data?.user?.username}
           />
         </div>
-        <BlogTitle path={slugify(data?.slug)} className="text-xl md:text-3xl">
+        <BlogTitle path={slugify(data?.slug)} className="md:text-3xl">
           {data?.title}
         </BlogTitle>
       </div>

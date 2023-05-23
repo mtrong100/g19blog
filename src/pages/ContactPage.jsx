@@ -11,7 +11,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <div className="contactBg h-[50vh] lg:h-[80vh] flex items-center justify-center">
-        <h1 className="text-5xl font-bold text-center md:text-8xl text-colorPink">
+        <h1 className="text-5xl font-bold text-center md:text-8xl text-colorPrimary">
           Contact us
         </h1>
       </div>

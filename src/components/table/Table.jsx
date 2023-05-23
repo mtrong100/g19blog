@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Table = ({ children }) => {
   return (
-    <div className="table-layout bg-colorDime hidden-scrollbar">
+    <div className="table-layout bg-colorDarkRedux hidden-scrollbar">
       <table>{children}</table>
     </div>
   );

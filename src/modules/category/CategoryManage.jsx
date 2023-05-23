@@ -131,7 +131,7 @@ const CategoryManage = () => {
         <div className="flex items-center gap-10">
           {/* ==== FILTER === */}
           <select
-            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDime border-colorPink"
+            className="py-2 w-[150px] border border-solid rounded bg-colorDarkRedux border-colorPrimary"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
@@ -141,7 +141,7 @@ const CategoryManage = () => {
             <option value={categoryStatus.UNAPPROVED}>Unapproved</option>
           </select>
           {/* SEARCH */}
-          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPink">
+          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPrimary">
             <span className="text-2xl">
               <AiOutlineSearch />
             </span>
@@ -175,7 +175,7 @@ const CategoryManage = () => {
                     </span>
                   </td>
                   <td>
-                    <span className="hover:opacity-90 capitalize select-none inline-block w-fit px-4 text-center rounded-lg font-semibold bg-colorDark italic text-colorPink text-sm py-[10px]">
+                    <span className="hover:opacity-90 capitalize select-none inline-block w-[120px] px-4 text-center rounded-lg font-semibold bg-colorDarkSaga italic text-colorPrimary text-sm py-[10px]">
                       {item.title}
                     </span>
                   </td>

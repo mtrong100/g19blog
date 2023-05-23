@@ -6,7 +6,7 @@ const Banner = () => {
     <section className="pt-[150px] bannerBG h-screen flex items-center justify-center">
       <div className="page-container">
         <div className="max-w-[600px]">
-          <span className="text-lg font-semibold text-colorPink">
+          <span className="text-lg font-semibold text-colorPrimary">
             Stay Informed, Get Inspired
           </span>
           <h1 className="my-3 text-5xl font-bold md:text-7xl text-linear">
@@ -24,7 +24,8 @@ const Banner = () => {
             path="/sign-in"
             type="button"
             kind="secondary"
-            className="w-[120px] md:w-[150px] h-[44px] md:h-[55px] mt-8"
+            padding="px-12 py-4"
+            className="mt-8 p"
           >
             Sign in
           </Button>

@@ -10,13 +10,13 @@ const NavMobile = ({ open, setOpen }) => {
     <ul
       className={`${
         open ? "translate-x-0" : "-translate-x-full"
-      }  fixed bg-colorDime shadow-xl transition-all duration-300 top-0 left-0 h-full w-[250px] flex flex-col items-stretch`}
+      }  fixed bg-colorDarkRedux shadow-xl transition-all duration-300 top-0 left-0 h-full w-[250px] flex flex-col items-stretch`}
     >
-      <div className="flex items-center justify-between px-5 pt-10 pb-6 border-b-2 border-solid border-b-colorPurple">
+      <div className="flex items-center justify-between px-5 pt-5 pb-6 border-b-2 border-solid md:pt-10 border-b-colorPrimary">
         <Logo />
         <span
           onClick={() => setOpen(false)}
-          className="text-2xl w-[40px] h-[40px] rounded-full bg-colorPurple flex items-center justify-center text-white"
+          className="text-xl w-[35px] h-[35px] rounded-full bg-colorSecondary flex items-center justify-center "
         >
           <CgClose />
         </span>

@@ -140,18 +140,13 @@ const PostManage = () => {
     <>
       <Heading>posts manage</Heading>
       <div className="flex justify-between py-10">
-        <Button
-          type="button"
-          kind="secondary"
-          className="h-[55px]"
-          path="/manage/add-post"
-        >
+        <Button type="button" kind="secondary" path="/manage/add-post">
           Add new post
         </Button>
         <div className="flex items-center gap-10">
           {/* ==== FILTER === */}
           <select
-            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDime border-colorPink"
+            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDarkRedux border-colorPrimary"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
@@ -161,7 +156,7 @@ const PostManage = () => {
             <option value={postStatus.REJECTED}>Rejected</option>
           </select>
           {/* ==== SEARCH === */}
-          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPink">
+          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPrimary">
             <span className="text-2xl">
               <AiOutlineSearch />
             </span>
@@ -196,14 +191,14 @@ const PostManage = () => {
               return (
                 <tr key={post.id}>
                   <td>
-                    <div className="flex items-center gap-x-3">
+                    <div className="flex gap-x-3">
                       <img
                         src={post.image}
                         alt=""
                         className="w-[100px] select-none h-[80px] rounded object-cover"
                       />
                       <div className="flex-1 whitespace-pre-wrap">
-                        <h3 className="font-semibold hover:opacity-90 mb-1 max-w-[300px] capitalize  leading-relaxed">
+                        <h3 className="mb-1 text-sm font-semibold leading-relaxed capitalize hover:text-colorPrimary">
                           {post.title}
                         </h3>
                         <time className="text-sm font-bold text-gray-500">
@@ -213,7 +208,7 @@ const PostManage = () => {
                     </div>
                   </td>
                   <td>
-                    <span className="hover:opacity-90 italic capitalize select-none inline-block px-[15px] w-[100px] text-center rounded-lg font-semibold bg-colorDark text-colorPink text-sm py-[10px]">
+                    <span className="hover:opacity-90 italic capitalize select-none inline-block px-[15px] w-[120px] text-center rounded-lg font-semibold bg-colorDarkSaga text-colorPrimary text-sm py-[10px]">
                       {category?.title}
                     </span>
                   </td>

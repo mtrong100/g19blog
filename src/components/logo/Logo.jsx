@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Logo = ({ className = "" }) => {
   return (
     <Link className={`text-2xl md:text-3xl font-semibold ${className}`} to="/">
-      <span className="font-bold text-linear">G19</span>BLOG
+      <span className="font-bold text-colorPrimary">G19</span>BLOG
     </Link>
   );
 };

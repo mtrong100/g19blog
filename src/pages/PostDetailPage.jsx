@@ -50,7 +50,7 @@ const PostDetailPage = () => {
             url={postDetail?.image}
             className="rounded-md h-[250px] md:h-[360px] group"
           ></BlogImage>
-          <div className="p-5 rounded-lg border-gradient post-info bg-colorDime">
+          <div className="p-5 rounded-lg border-gradient post-info bg-colorDarkRedux">
             <div className="flex items-center gap-5 mb-5">
               <BlogCategory className="px-6 py-2 ">
                 {category?.title}
@@ -61,7 +61,7 @@ const PostDetailPage = () => {
               {postDetail.title}
             </BlogTitle>
             <div className="flex items-center gap-5">
-              <div className="w-[80px] h-[80px] md:w-[150px] md:h-[150px] border-colorPink border-2 rounded-full">
+              <div className="w-[80px] h-[80px] md:w-[150px] md:h-[150px] border-colorPrimary border-2 rounded-full">
                 <img
                   className="rounded-full imgCover "
                   style={{ imageRendering: "pixelated" }}

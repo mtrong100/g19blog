@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Label = ({ children, htmlFor = "", ...props }) => {
   return (
     <label
-      className="font-bold uppercase cursor-pointer select-none md:text-xl text-colorPurple"
+      className="font-bold uppercase cursor-pointer select-none md:text-xl text-colorPrimary"
       htmlFor={htmlFor}
       {...props}
     >

@@ -1,4 +1,4 @@
-$primary: #7856ff;
+$primary: #ba8fff;
 $secondary: #f91880;
 /* ==================================== */
 @mixin text-linear {
@@ -14,6 +14,10 @@ $secondary: #f91880;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+}
+
+.glass:hover {
+  @include glass-effect();
 }
 
 .btn-shinny-1 {
@@ -56,21 +60,20 @@ $secondary: #f91880;
     right: 0;
     bottom: -4px;
     transition: all 0.3s linear;
-    @apply bg-colorGradient;
+    @apply bg-colorPrimary;
   }
   &:hover::before {
     width: 100%;
   }
   &:hover {
     transition: all 0.2s linear;
-    font-weight: 700;
-    @include text-linear;
+    @apply text-colorPrimary;
   }
 }
 
 .text-linear {
   font-weight: bold;
-  background: linear-gradient(to right top, $primary, $secondary);
+  background: linear-gradient(to right, $primary, $secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -176,6 +179,7 @@ $secondary: #f91880;
 
 .sidebar-item:hover {
   @include glass-effect();
+  @apply text-colorPrimary;
 }
 
 .hidden-input {
@@ -199,7 +203,7 @@ $secondary: #f91880;
     width: 100%;
   }
   thead {
-    @apply bg-colorDime;
+    @apply bg-colorDarkRedux;
     text-transform: uppercase;
   }
   th,
@@ -231,9 +235,5 @@ $secondary: #f91880;
 }
 
 .user-card:hover {
-  background: rgba(249, 24, 128, 0.51);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
+  @include glass-effect();
 }

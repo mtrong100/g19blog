@@ -59,7 +59,7 @@ const UserPage = () => {
         <div className="flex flex-col-reverse gap-5 mt-5 md:gap-10 md:items-center md:justify-between md:flex-row">
           {/* ==== FILTER === */}
           <select
-            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDime border-colorPink"
+            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDarkRedux border-colorPrimary"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
@@ -69,7 +69,7 @@ const UserPage = () => {
             <option value={userRole.USER}>USER</option>
           </select>
           {/* ==== SEARCH === */}
-          <div className="w-full flex items-center py-4 px-5 gap-3 md:max-w-[300px] border-2 border-solid rounded-full border-colorPink">
+          <div className="w-full flex items-center py-4 px-5 gap-3 md:max-w-[300px] border-2 border-solid rounded-full border-colorPrimary">
             <span className="text-2xl">
               <AiOutlineSearch />
             </span>

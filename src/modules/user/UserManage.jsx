@@ -119,7 +119,7 @@ const UserManage = () => {
         <div className="flex items-center gap-10">
           {/* ==== FILTER === */}
           <select
-            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDime border-colorPink"
+            className="py-2 w-[150px] text-lg border border-solid rounded bg-colorDarkRedux border-colorPrimary"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
@@ -129,7 +129,7 @@ const UserManage = () => {
             <option value={userRole.USER}>User</option>
           </select>
           {/* SEARCH */}
-          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPink">
+          <div className="w-full flex items-center py-4 px-5 gap-3 max-w-[300px] border-2 border-solid rounded-full border-colorPrimary">
             <span className="text-2xl">
               <AiOutlineSearch />
             </span>
@@ -183,12 +183,12 @@ const UserManage = () => {
                     </div>
                   </td>
                   <td className="overflow-x-hidden">
-                    <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDark text-colorPink ">
+                    <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDarkSaga text-colorPrimary">
                       {user.email}
                     </span>
                   </td>
                   <td>
-                    <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDark text-colorGreen ">
+                    <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDarkSaga text-colorSaga">
                       {user.password}
                     </span>
                   </td>

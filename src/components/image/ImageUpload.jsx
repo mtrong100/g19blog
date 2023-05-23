@@ -15,7 +15,7 @@ const ImageUpload = (props) => {
   } = props;
   return (
     <label
-      className={`cursor-pointer flex group items-center justify-center bg-colorDime hover:bg-opacity-50 transition-all border border-dashed w-full ${
+      className={`cursor-pointer flex group items-center justify-center bg-colorDarkRedux hover:bg-opacity-50 transition-all border border-dashed w-full ${
         image ? "h-full" : "min-h-[300px] "
       } rounded-lg ${className} relative overflow-hidden`}
     >

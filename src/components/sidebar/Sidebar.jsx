@@ -10,7 +10,6 @@ import { useAuth } from "../../context/auth-context";
 import { CgClose } from "react-icons/cg";
 
 const Sidebar = () => {
-  const { open, setOpen } = useAuth();
   const handleSignOut = () => {
     Swal.fire({
       title: "Log out of your account?",
@@ -30,10 +29,10 @@ const Sidebar = () => {
 
   return (
     <section
-      className={`hidden lg:block w-[300px] h-fit bg-colorDime shadow-lg rounded-xl p-5 border-l-4 border-colorPink`}
+      className={`hidden lg:block w-[300px] h-fit bg-colorDarkRedux shadow-lg rounded-lg p-5 border-l-2 border-colorPrimary`}
     >
       <Logo className="flex items-center justify-center pb-5" />
-      <ul className="flex flex-col gap-2 pt-8 border-t border-colorPink">
+      <ul className="flex flex-col gap-2 pt-8 border-t border-colorPrimary">
         {sidebarLinks.map((item) => {
           if (item.onClick) {
             return (
@@ -53,7 +52,7 @@ const Sidebar = () => {
               key={v4()}
               className={({ isActive }) =>
                 `${
-                  isActive ? "text-colorPink font-semibold" : ""
+                  isActive ? "text-colorPrimary font-semibold" : ""
                 } flex items-center gap-3 cursor-pointer sidebar-item text-lg font-semibold uppercase select-none px-5 py-4`
               }
               to={item.url}
@@ -93,19 +92,19 @@ export const SidebarMobile = () => {
     <section
       className={`${
         open ? "translate-x-0" : "-translate-x-full"
-      }  w-[300px] fixed shadow-xl z-[99] transition-all duration-300 top-0 h-full left-0 bg-colorDime pt-10
-       p-5 border-l-4 border-colorPink`}
+      }  w-[300px] fixed shadow-xl z-[99] transition-all duration-300 top-0 h-full left-0 bg-colorDarkRedux pt-10
+       p-5 border-l-2 border-colorPrimary`}
     >
       <div className="flex items-center justify-between pb-5">
         <Logo className="flex items-center justify-center" />
         <span
           onClick={() => setOpen(false)}
-          className="text-xl w-[40px] h-[40px] rounded-full bg-colorPurple flex items-center justify-center text-white"
+          className="text-xl w-[40px] h-[40px] rounded-full bg-colorPrimary flex items-center justify-center text-white"
         >
           <CgClose />
         </span>
       </div>
-      <ul className="flex flex-col gap-2 pt-8 border-t border-colorPink">
+      <ul className="flex flex-col gap-2 pt-8 border-t border-colorPrimary">
         {sidebarLinks.map((item) => {
           if (item.onClick) {
             return (
@@ -126,7 +125,7 @@ export const SidebarMobile = () => {
               key={v4()}
               className={({ isActive }) =>
                 `${
-                  isActive ? "text-colorPink font-semibold" : ""
+                  isActive ? "text-colorPrimary font-semibold" : ""
                 } flex items-center gap-3 cursor-pointer sidebar-item text-lg font-semibold uppercase select-none px-5 py-4`
               }
               to={item.url}

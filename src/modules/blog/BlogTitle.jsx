@@ -10,7 +10,7 @@ const BlogTitle = ({
   return (
     <h1
       className={`${className} font-bold capitalize cursor-pointer font-primary ${
-        hoverStyle ? "hover:underline" : "blog-title"
+        hoverStyle ? "hover:underline" : "hover:text-colorPrimary"
       }`}
     >
       <Link className="block" to={`/${path}`}>

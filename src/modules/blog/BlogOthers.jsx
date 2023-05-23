@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Heading from "../../components/heading/Heading";
-import BlogNewestLarge from "./BlogNewestLarge";
-import BlogNewestItem from "./BlogNewestItem";
 import {
   collection,
   limit,
@@ -11,17 +9,19 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase-app/firebase-config";
 import { v4 } from "uuid";
+import BlogNewestItem from "./BlogNewestItem";
 
-const NewestBlog = () => {
-  const [hotPosts, setHotPosts] = useState([]);
+const BlogOthers = () => {
+  const [posts, setPosts] = useState([]);
+
   // HANDLE GET HOT POST DATA
   useEffect(() => {
     const colRef = collection(db, "posts");
     const queries = query(
       colRef,
       where("status", "==", "approved"),
-      where("promote", "==", "hot"),
-      limit(4)
+      where("promote", "==", "none"),
+      limit(8)
     );
     onSnapshot(queries, (snapshot) => {
       const results = [];
@@ -30,24 +30,30 @@ const NewestBlog = () => {
           id: doc.id,
           ...doc.data(),
         });
-        setHotPosts(results);
+        setPosts(results);
       });
     });
   }, []);
 
-  if (hotPosts.length <= 0) return null;
-  const [first, ...other] = hotPosts;
+  const firstHalf = posts.slice(0, 4);
+  const secondHalf = posts.slice(4);
+
   return (
     <section className="mb-20">
       <div className="page-container">
-        <Heading>Newest blogs</Heading>
+        <Heading>More blogs</Heading>
         <div className="grid gap-10 mt-16 lg:grid-cols-2">
-          <BlogNewestLarge data={first}></BlogNewestLarge>
           <div className="p-5 rounded-lg shadow-xl bg-colorDarkRedux">
-            {other.length > 0 &&
-              other.map((item) => (
-                <BlogNewestItem key={v4()} data={item}></BlogNewestItem>
-              ))}
+            {firstHalf.length > 0 &&
+              firstHalf.map((item) => {
+                return <BlogNewestItem key={v4()} data={item}></BlogNewestItem>;
+              })}
+          </div>
+          <div className="p-5 rounded-lg shadow-xl bg-colorDarkRedux">
+            {secondHalf.length > 0 &&
+              secondHalf.map((item) => {
+                return <BlogNewestItem key={v4()} data={item}></BlogNewestItem>;
+              })}
           </div>
         </div>
       </div>
@@ -55,4 +61,4 @@ const NewestBlog = () => {
   );
 };
 
-export default NewestBlog;
+export default BlogOthers;

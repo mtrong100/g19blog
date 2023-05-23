@@ -13,18 +13,18 @@ const UserItem = ({ data }) => {
   const formatDate = new Date(date).toLocaleDateString("vi-VI");
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full gap-3 p-5 mx-auto md:gap-8 user-card rounded-xl bg-colorDime">
-      <span className="absolute px-4 py-2 text-xs font-semibold capitalize rounded md:text-base top-5 right-5 bg-colorGradient">
+    <div className="relative flex flex-col items-center justify-center w-full gap-3 p-5 mx-auto user-card md:gap-8 glass rounded-xl bg-colorDarkRedux">
+      <span className="absolute px-5 py-2 text-xs font-medium capitalize rounded md:text-base top-5 right-5 bg-colorSecondary">
         {data?.role}
       </span>
       <BlogImage
-        className="w-[100px] h-[100px] md:h-[150px] md:w-[150px] mt-12 rounded-full mb-2 group border-4 border-colorPink"
+        className="w-[100px] h-[100px] md:h-[150px] md:w-[150px] mt-12 md:mt-16 rounded-full mb-2 group border-4 border-colorPrimary"
         url={data?.avatar}
         alt="blog-img"
       />
       <div className="flex flex-col items-center justify-center gap-3">
         <BlogMeta
-          className="flex-col text-base"
+          className="flex-col text-xs md:text-base"
           path={data?.slug}
           date={formatDate}
           author={data?.username}

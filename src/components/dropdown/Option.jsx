@@ -12,7 +12,7 @@ const Option = ({ children, onClick }) => {
 
   return (
     <div
-      className="flex items-center justify-between px-5 py-6 capitalize cursor-pointer select-none hover:bg-slate-700"
+      className="flex items-center justify-between px-5 py-6 font-medium capitalize cursor-pointer select-none glass hover:text-colorPrimary"
       onClick={handleClick}
     >
       {children}

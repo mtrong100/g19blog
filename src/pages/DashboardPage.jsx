@@ -40,9 +40,9 @@ const DashboardPage = () => {
       <Heading>personal dashboard</Heading>
       {/* USER-INFO */}
       <div className="mt-10">
-        <div className="flex flex-col items-center gap-5 px-8 py-5 rounded-md md:flex-row bg-colorDime">
+        <div className="flex flex-col items-center gap-5 px-8 py-5 rounded-md md:flex-row bg-colorDarkRedux">
           <img
-            className="w-[250px] object-cover h-[250px] rounded-full border-2 border-colorPink"
+            className="w-[250px] object-cover h-[250px] rounded-full border-2 border-colorPrimary"
             src={userInfo?.avatar}
             alt="userInfo-avatar"
           />
@@ -50,7 +50,7 @@ const DashboardPage = () => {
             <Heading>{userInfo.username}</Heading>
             <div className="flex items-center gap-2">
               <span>Email:</span>
-              <span className="font-semibold hover:opacity-90 text-colorPink">
+              <span className="font-semibold hover:opacity-90 text-colorPrimary">
                 {userInfo?.email}
               </span>
             </div>

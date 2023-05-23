@@ -44,7 +44,7 @@ const BlogPage = () => {
       <div className="page-container py-[150px]">
         <Heading>All posts collection</Heading>
         {/* SEARCH */}
-        <div className="flex w-full gap-3 px-5 py-4 mt-10 border-2 border-solid rounded-full border-colorPink">
+        <div className="flex w-full gap-3 px-5 py-4 mt-10 border-2 border-solid rounded-full border-colorPrimary">
           <span className="text-2xl">
             <AiOutlineSearch />
           </span>

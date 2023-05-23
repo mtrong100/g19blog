@@ -11,7 +11,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-[999] w-full py-5 bg-black shadow-md">
+    <header className="fixed top-0 z-[999] w-full py-3 md:py-5 bg-colorDarkest shadow-md">
       <div className="flex items-center justify-between page-container">
         <div className="flex items-center gap-3">
           <span onClick={() => setOpen(!open)} className="text-4xl lg:hidden">
@@ -24,19 +24,19 @@ const Header = () => {
         <div className="flex items-center gap-x-5">
           {userInfo ? (
             <Button
+              className="px-6"
               path="/dashboard"
               type="button"
               kind="secondary"
-              className="w-[100px] md:w-[150px]"
             >
               dashboard
             </Button>
           ) : (
             <Button
+              className="px-10"
               path="/sign-up"
               type="button"
               kind="secondary"
-              className="w-[100px] md:w-[130px]"
             >
               sign up
             </Button>

@@ -72,11 +72,11 @@ const UserProfilePage = () => {
           />
           <div className="flex flex-col gap-4">
             <Heading>{`${slug}`}</Heading>
-            <span className="italic font-semibold hover:opacity-90 text-colorPink">
+            <span className="italic font-semibold hover:opacity-90 text-colorPrimary">
               {user?.email}
             </span>
             <div className="flex items-center gap-5">
-              <span className="hover:opacity-90 capitalize w-fit select-none inline-block px-[15px] text-center rounded-lg font-semibold bg-colorGradient text-white py-[10px] md:text-base text-sm">
+              <span className="inline-block px-6 py-2 text-sm font-semibold text-center text-white capitalize rounded-lg select-none bg-colorSecondary md:text-base">
                 {user?.role}
               </span>
               <span className="text-sm font-semibold text-white select-none md:text-lg hover:opacity-90">

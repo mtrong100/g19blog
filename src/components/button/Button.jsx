@@ -7,13 +7,14 @@ const Button = ({
   type = "button",
   onClick = () => {},
   className = "",
+  padding = "px-5 py-4",
   kind = "primary",
   ...props
 }) => {
   const { path } = props;
-  let backgroundBtn = "bg-colorPurple";
+  let backgroundBtn = "bg-colorPrimary";
   if (kind === "secondary") {
-    backgroundBtn = "bg-colorGradient";
+    backgroundBtn = "bg-colorSecondary";
   }
 
   if (path !== "" && typeof path === "string") {
@@ -23,7 +24,7 @@ const Button = ({
           type={type}
           onClick={onClick}
           {...props}
-          className={`flex ${className} btn-shinny-1 text-sm md:text-lg capitalize items-center justify-center px-5 rounded-md h-[42px] md:h-[60px] font-medium cursor-pointer ${backgroundBtn}`}
+          className={`flex ${className} btn-shinny-1 ${padding} text-sm md:text-base  capitalize items-center justify-center  rounded-md font-medium cursor-pointer ${backgroundBtn}`}
         >
           {children}
         </button>
@@ -36,7 +37,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       {...props}
-      className={`flex ${className} btn-shinny-1 text-lg capitalize items-center justify-center px-5 rounded-md h-[42px] md:h-[60px] font-medium cursor-pointer ${backgroundBtn}`}
+      className={`flex ${className} btn-shinny-1 text-sm md:text-base capitalize items-center justify-center px-5 py-4 rounded-md font-medium cursor-pointer ${backgroundBtn}`}
     >
       {children}
     </button>
@@ -49,6 +50,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   kind: PropTypes.string,
+  padding: PropTypes.string,
   path: PropTypes.string,
 };
 
