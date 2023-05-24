@@ -48,7 +48,8 @@ const PostDetailPage = () => {
         <div className="grid gap-5 mb-10 lg:grid-cols-2">
           <BlogImage
             url={postDetail?.image}
-            className="rounded-md h-[250px] md:h-[360px] group"
+            size="big"
+            // className="h-[250px] md:h-[360px] "
           ></BlogImage>
           <div className="p-5 rounded-lg border-gradient post-info bg-colorDarkRedux">
             <div className="flex items-center gap-5 mb-5">

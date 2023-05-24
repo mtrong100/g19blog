@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/heading/Heading";
-import BlogItem from "../modules/blog/BlogItem";
 import { v4 } from "uuid";
 import { db } from "../firebase-app/firebase-config";
 import { collection, onSnapshot } from "firebase/firestore";
 import UserCard from "../modules/user/UserCard";
 import { userRole } from "../utils/constants";
 import { AiOutlineSearch } from "react-icons/ai";
+import UserSkeleton from "../components/loadingSkeleton/UserSkeleton";
 
 const UserPage = () => {
   const [users, setUsers] = useState([]);
   const [filter, setFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // GET ALL POSTS DATA IN FIRESTORE DATABASE
   useEffect(() => {
@@ -27,6 +28,7 @@ const UserPage = () => {
           });
         });
         setUsers(results);
+        setLoading(false);
       });
     }
     getUserData();
@@ -83,6 +85,7 @@ const UserPage = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-5 mt-10 md:grid-cols-3 lg:grid-cols-4">
+          {loading && <UserSkeleton users={8} />}
           {filterUsers.length > 0 &&
             filterUsers.map((item) => (
               <UserCard key={v4()} data={item}></UserCard>

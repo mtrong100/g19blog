@@ -7,7 +7,7 @@ import slugify from "slugify";
 import NotFoundPage from "../../pages/NotFoundPage";
 import PropTypes from "prop-types";
 
-const BlogItem = ({ data }) => {
+const BlogItemTrending = ({ data }) => {
   if (!data.id) return <NotFoundPage />;
 
   // FORMAT DATE
@@ -18,7 +18,7 @@ const BlogItem = ({ data }) => {
 
   return (
     <div className="flex flex-col h-full p-3 transition-all border border-transparent rounded-lg shadow-lg hover:border-colorPrimary bg-colorDarkRedux">
-      <BlogImage url={data?.image} />
+      <BlogImage size="big" url={data?.image} />
       <div className="flex flex-col flex-1 h-full gap-4 p-3">
         <BlogCategory path={slugify(data?.category?.slug)} className="text-xs">
           {data?.category?.title}
@@ -41,7 +41,7 @@ const BlogItem = ({ data }) => {
 };
 
 // ADDING PropTypes
-BlogItem.propTypes = {
+BlogItemTrending.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.string.isRequired,
     createdAt: PropTypes.shape({
@@ -61,4 +61,4 @@ BlogItem.propTypes = {
   }).isRequired,
 };
 
-export default BlogItem;
+export default BlogItemTrending;

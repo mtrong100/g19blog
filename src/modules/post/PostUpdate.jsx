@@ -35,6 +35,7 @@ import {
   collection,
   updateDoc,
 } from "firebase/firestore";
+import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 
 // VALIDATE FORM
 const schema = yup.object({
@@ -332,6 +333,7 @@ const PostUpdate = () => {
         </div>
         {/* ======================= Button ===================== */}
         <Button
+          id="update-post"
           type="submit"
           kind="secondary"
           className={`w-[200px] mx-auto h-[65px] font-semibold text-xl ${
@@ -341,6 +343,20 @@ const PostUpdate = () => {
           {isSubmitting ? <Loading /> : "update post"}
         </Button>
       </form>
+
+      {/* scroll to top */}
+      <a href="#">
+        <div className="fixed shadow-2xl w-[50px] h-[50px] rounded-full bottom-20 right-5 flex items-center justify-center bg-colorSecondary text-white z-40 cursor-pointer font-bold text-2xl">
+          <BiUpArrowAlt></BiUpArrowAlt>
+        </div>
+      </a>
+
+      {/* scroll to bottom */}
+      <a href="#update-post">
+        <div className="fixed shadow-2xl w-[50px] h-[50px] rounded-full bottom-5 right-5 flex items-center justify-center bg-colorSecondary text-white z-40 cursor-pointer font-bold text-2xl">
+          <BiDownArrowAlt></BiDownArrowAlt>
+        </div>
+      </a>
     </div>
   );
 };

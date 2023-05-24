@@ -8,8 +8,8 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase-app/firebase-config";
-import BlogItem from "./BlogItem";
 import { v4 } from "uuid";
+import BlogItemTrending from "./BlogItemTrending";
 
 const BlogTrending = () => {
   const [bestPosts, setBestPosts] = useState([]);
@@ -39,7 +39,7 @@ const BlogTrending = () => {
       <div className="grid gap-8 mt-10 md:grid-cols-2">
         {bestPosts.length > 0 &&
           bestPosts.map((item) => {
-            return <BlogItem blockHeight key={v4()} data={item}></BlogItem>;
+            return <BlogItemTrending key={v4()} data={item}></BlogItemTrending>;
           })}
       </div>
     </div>

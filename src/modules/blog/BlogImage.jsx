@@ -1,29 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const BlogImage = ({
-  className = "rounded-md",
+  size = "medium",
+  className = "rounded-lg",
   alt = "blog-img",
-  path = "",
   url = "",
 }) => {
-  if (path) {
-    return (
-      <Link to={`/${path}`}>
-        <div className={`${className} overflow-hidden`}>
-          <img
-            className="transition-all duration-500 select-none imgCover group-hover:scale-105"
-            src={url}
-            alt={alt}
-            loading="lazy"
-          />
-        </div>
-      </Link>
-    );
+  switch (size) {
+    case "small":
+      size = "w-full h-[250px] md:h-[200px] lg:h-[170px]";
+      break;
+    case "medium":
+      size = "h-[250px] md:h-[150px] lg:h-[250px]";
+      break;
+    case "big":
+      size = "h-[250px] lg:h-[350px]";
+      break;
+    case "large":
+      size = "h-[250px] md:h-[430px]";
+      break;
+    case "circle":
+      size = "w-[100px] h-[100px] md:h-[150px] md:w-[150px]";
+      break;
+
+    default:
+      break;
   }
 
   return (
-    <div className={`${className} overflow-hidden`}>
+    <div className={`${className} ${size} overflow-hidden group `}>
       <img
         className="transition-all duration-500 select-none imgCover group-hover:scale-105"
         src={url}
@@ -32,6 +38,14 @@ const BlogImage = ({
       />
     </div>
   );
+};
+
+/* ADDING PropsTypes */
+BlogImage.propTypes = {
+  size: PropTypes.string,
+  className: PropTypes.string,
+  alt: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export default BlogImage;

@@ -5,10 +5,12 @@ import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../firebase-app/firebase-config";
 import { v4 } from "uuid";
 import BlogItem from "../modules/blog/BlogItem";
+import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
 
 const DashboardPage = () => {
   const { userInfo } = useAuth();
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // FETCH POST DATA
   useEffect(() => {
@@ -24,6 +26,7 @@ const DashboardPage = () => {
             ...doc.data(),
           });
           setPosts(results);
+          setLoading(false);
         });
       });
     }
@@ -75,6 +78,7 @@ const DashboardPage = () => {
       <div className="mt-16">
         <Heading>your blogs</Heading>
         <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
+          {loading && <BlogItemSkeleton blogs={9} />}
           {posts.length > 0 &&
             posts.map((item) => {
               return <BlogItem key={v4()} data={item}></BlogItem>;

@@ -20,7 +20,8 @@ const BlogNewestItem = ({ data }) => {
       className={`flex flex-col md:flex-row gap-5 mb-7 pb-7 border-b border-b-colorPurple last:border-b-0 last:pb-0 last:mb-0`}
     >
       <BlogImage
-        className="flex-1 w-full h-[170px] rounded-xl group"
+        size="small"
+        className="md:flex-1"
         url={data?.image}
         alt="blog-img"
       />

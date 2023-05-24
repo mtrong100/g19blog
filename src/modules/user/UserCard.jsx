@@ -18,7 +18,8 @@ const UserItem = ({ data }) => {
         {data?.role}
       </span>
       <BlogImage
-        className="w-[100px] h-[100px] md:h-[150px] md:w-[150px] mt-12 md:mt-16 rounded-full mb-2 group border-4 border-colorPrimary"
+        size="circle"
+        className="mt-12 mb-2 border-4 rounded-full md:mt-16 border-colorPrimary"
         url={data?.avatar}
         alt="blog-img"
       />

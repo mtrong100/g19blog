@@ -15,11 +15,7 @@ const BlogNewestLarge = ({ data }) => {
 
   return (
     <div className="p-3 transition-all border border-transparent rounded-lg shadow-lg hover:border-colorPrimary bg-colorDarkRedux">
-      <BlogImage
-        className="h-[250px] md:h-[430px] group rounded"
-        url={data?.image}
-        alt="blog-img"
-      />
+      <BlogImage size="large" url={data?.image} alt="blog-img" />
       <div className="flex flex-col gap-5 pt-5">
         <div className="flex items-center justify-between">
           <BlogCategory path={slugify(data?.category.slug)}>

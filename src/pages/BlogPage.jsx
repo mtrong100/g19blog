@@ -6,10 +6,12 @@ import { v4 } from "uuid";
 import { db } from "../firebase-app/firebase-config";
 import { collection, onSnapshot } from "firebase/firestore";
 import { AiOutlineSearch } from "react-icons/ai";
+import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // GET ALL POSTS DATA IN FIRESTORE DATABASE
   useEffect(() => {
@@ -24,6 +26,7 @@ const BlogPage = () => {
           });
         });
         setPosts(results);
+        setLoading(false);
       });
     }
     getPostData();
@@ -57,6 +60,7 @@ const BlogPage = () => {
           />
         </div>
         <div className="grid gap-5 mt-10 md:grid-cols-3">
+          {loading && <BlogItemSkeleton blogs={9} />}
           {searchPosts.length > 0 &&
             searchPosts.map((item) => {
               return <BlogItem key={v4()} data={item}></BlogItem>;

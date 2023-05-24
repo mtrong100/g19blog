@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/auth-context";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 /* ===================================================== */
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
@@ -39,50 +41,55 @@ function App() {
             </div>
           }
         >
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/sign-in" element={<SigninPage />} />
-            <Route path="/sign-up" element={<SignupPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/user" element={<UserPage />}></Route>
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-            <Route path="/:slug" element={<PostDetailPage />}></Route>
-            <Route path="/category/:slug" element={<CategoryPage />}></Route>
-            <Route path="/profile/:slug" element={<UserProfilePage />}></Route>
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/sign-in" element={<SigninPage />} />
+              <Route path="/sign-up" element={<SignupPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/user" element={<UserPage />}></Route>
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+              <Route path="/:slug" element={<PostDetailPage />}></Route>
+              <Route path="/category/:slug" element={<CategoryPage />}></Route>
+              <Route
+                path="/profile/:slug"
+                element={<UserProfilePage />}
+              ></Route>
 
-            {/* ============ DASHBOARD =========== */}
-            <Route element={<DashboardLayout />}>
-              <Route path="/dashboard" element={<DashboardPage />}></Route>
-              {/* ============ POST =============== */}
-              <Route path="/manage/post" element={<PostManage />}></Route>
-              <Route path="/manage/add-post" element={<PostAddNew />}></Route>
-              <Route
-                path="/manage/update-post"
-                element={<PostUpdate />}
-              ></Route>
-              {/* ============ CATEGORY =========== */}
-              <Route
-                path="/manage/category"
-                element={<CategoryManage />}
-              ></Route>
-              <Route
-                path="/manage/add-category"
-                element={<CategoryAddNew />}
-              ></Route>
-              <Route
-                path="/manage/update-category"
-                element={<CategoryUpdate />}
-              ></Route>
-              {/* ============ USER =============== */}
-              <Route path="/manage/user" element={<UserManage />}></Route>
-              <Route path="/manage/add-user" element={<UserAddNew />}></Route>
-              <Route
-                path="/manage/update-user"
-                element={<UserUpdate />}
-              ></Route>
-            </Route>
-          </Routes>
+              {/* ============ DASHBOARD =========== */}
+              <Route element={<DashboardLayout />}>
+                <Route path="/dashboard" element={<DashboardPage />}></Route>
+                {/* ============ POST =============== */}
+                <Route path="/manage/post" element={<PostManage />}></Route>
+                <Route path="/manage/add-post" element={<PostAddNew />}></Route>
+                <Route
+                  path="/manage/update-post"
+                  element={<PostUpdate />}
+                ></Route>
+                {/* ============ CATEGORY =========== */}
+                <Route
+                  path="/manage/category"
+                  element={<CategoryManage />}
+                ></Route>
+                <Route
+                  path="/manage/add-category"
+                  element={<CategoryAddNew />}
+                ></Route>
+                <Route
+                  path="/manage/update-category"
+                  element={<CategoryUpdate />}
+                ></Route>
+                {/* ============ USER =============== */}
+                <Route path="/manage/user" element={<UserManage />}></Route>
+                <Route path="/manage/add-user" element={<UserAddNew />}></Route>
+                <Route
+                  path="/manage/update-user"
+                  element={<UserUpdate />}
+                ></Route>
+              </Route>
+            </Routes>
+          </SkeletonTheme>
         </Suspense>
       </AuthProvider>
     </>
