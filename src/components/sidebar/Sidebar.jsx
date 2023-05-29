@@ -2,7 +2,7 @@ import React from "react";
 import { sidebarLinks } from "../../data/data";
 import Logo from "../logo/Logo";
 import { v4 } from "uuid";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-app/firebase-config";
 import Swal from "sweetalert2";

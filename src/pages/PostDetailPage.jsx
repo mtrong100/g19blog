@@ -9,6 +9,7 @@ import BlogTitle from "../modules/blog/BlogTitle";
 import parse from "html-react-parser";
 import BlogRelated from "../modules/blog/BlogRelated";
 import NotFoundPage from "./NotFoundPage";
+import BlogSidebar from "../modules/blog/BlogSidebar";
 
 const PostDetailPage = () => {
   const { slug } = useParams();
@@ -44,21 +45,17 @@ const PostDetailPage = () => {
   if (!postDetail.title) return null;
   return (
     <Layout>
-      <div className="page-container pt-[150px]">
-        <div className="grid gap-5 mb-10 lg:grid-cols-2">
-          <BlogImage
-            url={postDetail?.image}
-            size="big"
-            // className="h-[250px] md:h-[360px] "
-          ></BlogImage>
-          <div className="p-5 rounded-lg border-gradient post-info bg-colorDarkRedux">
+      <div className="pt-[150px]">
+        <div className="grid gap-5 mb-10 lg:mb-28 page-container lg:grid-cols-2">
+          <BlogImage url={postDetail?.image} size="banner"></BlogImage>
+          <div className="flex flex-col gap-2 p-5 rounded-lg md:gap-5 border-gradient post-info bg-colorDarkRedux">
             <div className="flex items-center gap-5 mb-5">
-              <BlogCategory className="px-6 py-2 ">
+              <BlogCategory className="px-5 py-2">
                 {category?.title}
               </BlogCategory>
-              <span className="font-semibold md:text-xl">{formatDate}</span>
+              <span className="font-semibold md:text-lg">{formatDate}</span>
             </div>
-            <BlogTitle className="mb-5 text-xl md:text-4xl">
+            <BlogTitle className="text-xl md:text-3xl">
               {postDetail.title}
             </BlogTitle>
             <div className="flex items-center gap-5">
@@ -70,16 +67,20 @@ const PostDetailPage = () => {
                   alt=""
                 />
               </div>
-              <h1 className="text-2xl font-bold select-none md:text-4xl hover:opacity-80 text-linear">
+              <h1 className="flex-1 text-2xl font-bold select-none md:text-4xl hover:opacity-80 text-linear">
                 {user?.username}
               </h1>
             </div>
           </div>
         </div>
-        <div className="post-content">
+        {/* Blog Content */}
+        <div className="content-layout blogdetail-container">
           <div className="entry-content">{parse(postDetail.content || "")}</div>
+          <BlogSidebar />
         </div>
-        <BlogRelated categoryID={category?.id} />
+        <div className="mt-10 lg:mt-28 blogdetail-container">
+          <BlogRelated categoryID={category?.id} />
+        </div>
       </div>
     </Layout>
   );

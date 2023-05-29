@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Heading from "../../components/heading/Heading";
-import BlogItem from "./BlogItem";
 import { db } from "../../firebase-app/firebase-config";
 import {
   collection,
@@ -10,6 +9,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import BlogRelatedItem from "./BlogRelatedItem";
 
 const BlogRelated = ({ categoryID }) => {
   const [postRelated, setPostRelated] = useState([]);
@@ -21,7 +21,7 @@ const BlogRelated = ({ categoryID }) => {
       const docRef = query(
         collection(db, "posts"),
         where("category.id", "==", categoryID),
-        limit(3)
+        limit(4)
       );
       onSnapshot(docRef, (snapshot) => {
         const results = [];
@@ -41,10 +41,10 @@ const BlogRelated = ({ categoryID }) => {
   return (
     <div className="pb-20">
       <Heading>similar blogs</Heading>
-      <div className="grid gap-5 mt-10 md:grid-cols-3">
+      <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-4">
         {postRelated.length > 0 &&
           postRelated.map((item) => (
-            <BlogItem key={item.id} data={item}></BlogItem>
+            <BlogRelatedItem key={item.id} data={item}></BlogRelatedItem>
           ))}
       </div>
     </div>

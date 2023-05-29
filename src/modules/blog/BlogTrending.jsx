@@ -13,6 +13,7 @@ import BlogItemTrending from "./BlogItemTrending";
 
 const BlogTrending = () => {
   const [bestPosts, setBestPosts] = useState([]);
+
   useEffect(() => {
     const colRef = collection(db, "posts");
     const queries = query(

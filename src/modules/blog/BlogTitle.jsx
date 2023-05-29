@@ -9,7 +9,7 @@ const BlogTitle = ({
 }) => {
   return (
     <h1
-      className={`${className} font-bold capitalize cursor-pointer font-primary ${
+      className={`${className} font-bold leading-snug capitalize cursor-pointer font-primary ${
         hoverStyle ? "hover:underline" : "hover:text-colorPrimary"
       }`}
     >

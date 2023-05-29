@@ -12,16 +12,19 @@ const BlogImage = ({
       size = "w-full h-[250px] md:h-[200px] lg:h-[170px]";
       break;
     case "medium":
-      size = "h-[250px] md:h-[150px] lg:h-[250px]";
+      size = "h-[220px]";
       break;
     case "big":
-      size = "h-[250px] lg:h-[350px]";
+      size = "h-[250px] lg:h-[360px]";
       break;
     case "large":
       size = "h-[250px] md:h-[430px]";
       break;
     case "circle":
       size = "w-[100px] h-[100px] md:h-[150px] md:w-[150px]";
+      break;
+    case "banner":
+      size = "w-full h-[250px] md:h-[390px]";
       break;
 
     default:

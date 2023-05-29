@@ -59,7 +59,7 @@ const BlogPage = () => {
             placeholder="Search post..."
           />
         </div>
-        <div className="grid gap-5 mt-10 md:grid-cols-3">
+        <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {loading && <BlogItemSkeleton blogs={9} />}
           {searchPosts.length > 0 &&
             searchPosts.map((item) => {

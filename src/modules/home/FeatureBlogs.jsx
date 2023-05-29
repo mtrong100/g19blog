@@ -42,7 +42,7 @@ const FeatureBlogs = () => {
     <section className="pt-20 pb-[100px] md:pb-[120px]">
       <div className="page-container">
         <Heading>Feature blogs</Heading>
-        <div className="grid gap-5 mt-10 md:grid-cols-3">
+        <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {loading && <BlogItemSkeleton blogs={3} />}
           {featurePosts.length > 0 &&
             featurePosts.map((post) => <BlogItem key={post.id} data={post} />)}

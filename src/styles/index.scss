@@ -28,6 +28,9 @@
   .page-container {
     @apply w-full max-w-[1200px] px-5 mx-auto;
   }
+  .blogdetail-container {
+    @apply w-full px-10 mx-auto;
+  }
 }
 
 .quill {

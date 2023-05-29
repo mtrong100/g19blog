@@ -14,7 +14,6 @@ import { v4 } from "uuid";
 
 const NewestBlog = () => {
   const [hotPosts, setHotPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   // HANDLE GET HOT POST DATA
   useEffect(() => {
