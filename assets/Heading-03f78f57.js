@@ -1,0 +1,1 @@
+import{j as r}from"./index-4820e760.js";import{P as o}from"./Button-f45348c8.js";const t=({children:e})=>r.jsx("h1",{className:"text-2xl font-semibold uppercase border-b-2 md:text-4xl text-linear w-fit border-colorPurple",children:e});t.propTypes={children:o.node};export{t as H};
