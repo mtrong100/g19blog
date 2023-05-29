@@ -9,6 +9,7 @@ import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
 
 const DashboardPage = () => {
   const { userInfo } = useAuth();
+  console.log(userInfo);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -87,7 +87,7 @@ const UserProfilePage = () => {
         </div>
         <div className="mt-20">
           <Heading>blogs post</Heading>
-          <div className="grid gap-5 mt-10 md:grid-cols-3">
+          <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
             {posts.length > 0 &&
               posts.map((item) => {
                 return <BlogItem key={v4()} data={item}></BlogItem>;

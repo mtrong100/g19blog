@@ -133,8 +133,7 @@ export const sidebarLinks = [
 export const tableTh = ["post", "category", "author", "status", "actions"];
 export const tableUserTh = [
   "infomation",
-  "email",
-  "password",
+  "email & password",
   "role",
   "actions",
 ];

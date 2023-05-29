@@ -11,7 +11,7 @@ const LabelRole = ({ children, type = "" }) => {
       typeStyles = "bg-colorGradient2";
       break;
     case "user":
-      typeStyles = "bg-colorDark2";
+      typeStyles = "bg-colorDarkSaga";
       break;
 
     default:

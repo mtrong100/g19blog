@@ -182,16 +182,17 @@ const UserManage = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="overflow-x-hidden">
+                  <td className="flex flex-col gap-2 overflow-x-hidden">
                     <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDarkSaga text-colorPrimary">
-                      {user.email}
+                      <span className="text-white">Email:</span>
+                      <span className="ml-3">{user.email}</span>
                     </span>
-                  </td>
-                  <td>
                     <span className="inline-block px-4 py-3 text-sm font-semibold text-center rounded-lg w-fit hover:opacity-90 bg-colorDarkSaga text-colorSaga">
-                      {user.password}
+                      <span className="text-white">Password:</span>
+                      <span className="ml-3">{user.password}</span>
                     </span>
                   </td>
+
                   <td>{renderUserRole(user.role)}</td>
                   <td>
                     <div className="flex items-center text-gray-500 gap-x-3">
