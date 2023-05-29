@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const BlogTitle = ({
   path = "",
@@ -9,7 +10,7 @@ const BlogTitle = ({
 }) => {
   return (
     <h1
-      className={`${className} font-bold leading-snug capitalize cursor-pointer font-primary ${
+      className={`${className} font-bold leading-snug capitalize  cursor-pointer font-primary ${
         hoverStyle ? "hover:underline" : "hover:text-colorPrimary"
       }`}
     >
@@ -18,6 +19,14 @@ const BlogTitle = ({
       </Link>
     </h1>
   );
+};
+
+/* ADDING PropsTypes */
+BlogTitle.propTypes = {
+  children: PropTypes.node,
+  path: PropTypes.string,
+  className: PropTypes.string,
+  hoverStyle: PropTypes.bool,
 };
 
 export default BlogTitle;

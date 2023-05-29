@@ -25,7 +25,7 @@ const BlogItemTrending = ({ data }) => {
         </BlogCategory>
         <BlogTitle
           path={slugify(data?.slug)}
-          className="flex-1 md:text-sm lg:text-xl"
+          className="flex-1 md:text-sm lg:text-2xl"
         >
           {data?.title}
         </BlogTitle>

@@ -1,14 +1,15 @@
-import React from "react";
-import BlogImage from "./BlogImage";
-import demoImg from "../../assets/images/demo.png";
-import BlogCategory from "./BlogCategory";
-import BlogMeta from "./BlogMeta";
-import BlogTitle from "./BlogTitle";
 import slugify from "slugify";
+import React from "react";
+import NotFoundPage from "../../pages/NotFoundPage";
+import BlogTitle from "./BlogTitle";
+import BlogMeta from "./BlogMeta";
+import BlogImage from "./BlogImage";
+import BlogCategory from "./BlogCategory";
 
 const BlogNewestItem = ({ data }) => {
-  if (!data.id) return null;
-  // FORMAT DATE TO DISPLAY
+  if (!data) return <NotFoundPage />;
+
+  // Formate date
   const date = data?.createdAt?.seconds
     ? new Date(data?.createdAt?.seconds * 1000)
     : new Date();
@@ -21,7 +22,7 @@ const BlogNewestItem = ({ data }) => {
     >
       <BlogImage
         size="small"
-        className="md:flex-1"
+        className="flex-1"
         url={data?.image}
         alt="blog-img"
       />
@@ -29,11 +30,11 @@ const BlogNewestItem = ({ data }) => {
         <BlogCategory className="text-xs" path={slugify(data?.category.slug)}>
           {category?.title}
         </BlogCategory>
-        <BlogTitle path={slugify(data?.slug)} className="text-lg">
+        <BlogTitle className="text-base" path={slugify(data?.slug)}>
           {data?.title}
         </BlogTitle>
         <BlogMeta
-          className="text-xs"
+          className="text-sm"
           path={user?.slug}
           date={formatDate}
           author={user?.username}

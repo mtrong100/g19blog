@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Heading from "../../components/heading/Heading";
+import { db } from "../../firebase-app/firebase-config";
+import { v4 } from "uuid";
+import BlogNewestItem from "./BlogNewestItem";
 import {
   collection,
   limit,
@@ -7,14 +10,11 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { db } from "../../firebase-app/firebase-config";
-import { v4 } from "uuid";
-import BlogNewestItem from "./BlogNewestItem";
 
 const BlogOthers = () => {
   const [posts, setPosts] = useState([]);
 
-  // HANDLE GET HOT POST DATA
+  // Fetch posts data from firebase
   useEffect(() => {
     const colRef = collection(db, "posts");
     const queries = query(
@@ -37,7 +37,6 @@ const BlogOthers = () => {
 
   const firstHalf = posts.slice(0, 4);
   const secondHalf = posts.slice(4);
-
   return (
     <section className="mb-20">
       <div className="page-container">

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Heading from "../../components/heading/Heading";
 import BlogNewestLarge from "./BlogNewestLarge";
 import BlogNewestItem from "./BlogNewestItem";
+import { v4 } from "uuid";
+import { db } from "../../firebase-app/firebase-config";
 import {
   collection,
   limit,
@@ -9,13 +11,11 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { db } from "../../firebase-app/firebase-config";
-import { v4 } from "uuid";
 
 const NewestBlog = () => {
   const [hotPosts, setHotPosts] = useState([]);
 
-  // HANDLE GET HOT POST DATA
+  // Fetch posts data
   useEffect(() => {
     const colRef = collection(db, "posts");
     const queries = query(
@@ -38,6 +38,7 @@ const NewestBlog = () => {
 
   if (hotPosts.length <= 0) return null;
   const [first, ...other] = hotPosts;
+
   return (
     <section className="mb-20">
       <div className="page-container">

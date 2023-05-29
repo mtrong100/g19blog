@@ -9,7 +9,7 @@ const BlogImage = ({
 }) => {
   switch (size) {
     case "small":
-      size = "w-full h-[250px] md:h-[200px] lg:h-[170px]";
+      size = "w-full h-[250px] md:h-[200px] lg:h-[160px]";
       break;
     case "medium":
       size = "h-[220px]";

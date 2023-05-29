@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/heading/Heading";
+import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
 import BlogItem from "../modules/blog/BlogItem";
 import { v4 } from "uuid";
 import { db } from "../firebase-app/firebase-config";
 import { collection, onSnapshot } from "firebase/firestore";
 import { AiOutlineSearch } from "react-icons/ai";
-import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // GET ALL POSTS DATA IN FIRESTORE DATABASE
+  // Fetch posts data from firebase
   useEffect(() => {
     async function getPostData() {
       const colRef = collection(db, "posts");
@@ -32,12 +32,12 @@ const BlogPage = () => {
     getPostData();
   }, []);
 
-  // SEARCH POSTS
+  // Search posts
   const searchPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // FIX SCROLL BUG
+  // Fix scroll bug
   useEffect(() => {
     document.body.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
@@ -46,7 +46,8 @@ const BlogPage = () => {
     <Layout>
       <div className="page-container py-[150px]">
         <Heading>All posts collection</Heading>
-        {/* SEARCH */}
+
+        {/* Search & Filter */}
         <div className="flex w-full gap-3 px-5 py-4 mt-10 border-2 border-solid rounded-full border-colorPrimary">
           <span className="text-2xl">
             <AiOutlineSearch />
@@ -59,8 +60,10 @@ const BlogPage = () => {
             placeholder="Search post..."
           />
         </div>
+
+        {/* Posts data */}
         <div className="grid gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3">
-          {loading && <BlogItemSkeleton blogs={9} />}
+          {loading && <BlogItemSkeleton Imageheight={250} blogs={9} />}
           {searchPosts.length > 0 &&
             searchPosts.map((item) => {
               return <BlogItem key={v4()} data={item}></BlogItem>;

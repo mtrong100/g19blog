@@ -1,13 +1,14 @@
+import slugify from "slugify";
 import React from "react";
+import BlogTitle from "./BlogTitle";
+import BlogMeta from "./BlogMeta";
 import BlogImage from "./BlogImage";
 import BlogCategory from "./BlogCategory";
-import BlogMeta from "./BlogMeta";
-import BlogTitle from "./BlogTitle";
-import slugify from "slugify";
 
 const BlogNewestLarge = ({ data }) => {
   if (!data.id) return null;
-  // FORMAT DATE TO DISPLAY
+
+  // Format date
   const date = data?.createdAt?.seconds
     ? new Date(data?.createdAt?.seconds * 1000)
     : new Date();
