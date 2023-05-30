@@ -1,4 +1,4 @@
-import UserInfo from "../modules/user/userInfo";
+import UserInfo from "../modules/user/UserInfo";
 import React, { useEffect, useState } from "react";
 import Heading from "../components/heading/Heading";
 import BlogItemSkeleton from "../components/loadingSkeleton/BlogItemSkeleton";
