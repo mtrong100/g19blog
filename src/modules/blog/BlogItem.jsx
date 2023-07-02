@@ -20,7 +20,7 @@ const BlogItem = ({ data }) => {
     <div className="flex flex-col h-full p-3 transition-all border border-transparent rounded-lg shadow-lg hover:border-colorPrimary bg-colorDarkRedux">
       <BlogImage url={data?.image} />
       <div className="flex flex-col flex-1 h-full gap-4 p-3">
-        <BlogCategory path={slugify(data?.category?.slug)} className="text-xs">
+        <BlogCategory path={data?.category?.slug} className="text-xs">
           {data?.category?.title}
         </BlogCategory>
         <BlogTitle
